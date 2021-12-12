@@ -11,6 +11,14 @@ const DetailsCard = () => {
                 <p className="card-details__label"> Label </p> 
                 <h3 className="card-details__info"> Info </h3> 
             </div>
+            <div className="card-details__pair">
+                <p className="card-details__label"> Label </p> 
+                <h3 className="card-details__info"> Info </h3> 
+            </div>
+            <div className="card-details__pair">
+                <p className="card-details__label"> Label </p> 
+                <h3 className="card-details__info"> Info </h3> 
+            </div>
         </div>
     )
 }

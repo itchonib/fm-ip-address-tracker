@@ -1,9 +1,6 @@
 .input__wrapper {
-    /* position: relative; */
     display: flex;
     width: 100%;
-    /* margin: 5% 0; */
-
 }
 
 .input {
@@ -26,4 +23,12 @@
     align-items: center;
     justify-content: center;
     /* left: 85%; */
+}
+
+@media only screen and (min-width: 1440px) {
+    .input__wrapper {
+        display: flex;
+       max-width: 40%;
+    }
+    
 }

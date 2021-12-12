@@ -7,6 +7,8 @@
     align-items: center;
     margin-top: 8%;
     padding: 8% 0;
+    border: 1px solid blue;
+    z-index: 3;
 }
 
 .card-details__label{
@@ -20,4 +22,25 @@
 .card-details__info {
     font-weight: 500;
     margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 1440px) {
+    .card-details__wrapper {
+        flex-direction: row;
+        max-width: 68%;
+        /* justify-content: space-between; */
+        padding: 3% 1%;
+        
+    }
+
+    .card-details__pair {
+        border-right: gray 1px solid;
+        margin-left: 2rem;
+        width: 25%;
+    }
+
+    .card-details__pair:last-child {
+        border: none;
+    }
+    
 }
