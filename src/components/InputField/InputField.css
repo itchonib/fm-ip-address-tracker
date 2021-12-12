@@ -1,0 +1,29 @@
+.input__wrapper {
+    /* position: relative; */
+    display: flex;
+    width: 100%;
+    /* margin: 5% 0; */
+
+}
+
+.input {
+    border-radius: 15px 0 0 15px;
+    height: 2rem;
+    width: 92%;
+    border-right: none;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border: none;
+    outline: none;
+}
+
+.input__icon-wrapper {
+    background: black;
+    /* position: absolute; */
+    width: 8%;
+    padding: 0.8rem 1rem;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* left: 85%; */
+}
