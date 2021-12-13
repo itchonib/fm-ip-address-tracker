@@ -53,3 +53,14 @@ h1,h2,h3,h4,h5,h6,p {
   position: absolute;
   bottom: 0;
 }
+
+@media only screen and (min-width: 1440px) {
+  .main__background-banner {
+    height: 35%;
+  }
+
+  .leaflet-container {
+    height: 65%;
+  }
+  
+}
