@@ -18,12 +18,14 @@
     background: black;
     /* position: absolute; */
     width: 8%;
-    padding: 0.8rem 1rem;
+    /* padding: 0.8rem 1rem; */
+    padding: 0.8rem 1.8rem;
     border-radius: 0 15px 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
 }
 
 .input__icon-wrapper:hover {

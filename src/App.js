@@ -8,16 +8,29 @@ import axios from "axios";
 
 function App() {
   const [ipData, setIpData] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const getIpInformation = () => {
+    let baseUrl = 'https://geo.ipify.org/api/v2/country'
+    let apiKey =  '?apiKey=at_rfqLVPQmxILsjD4EGJ1EE1PG24cVc'
+    let ipAddress = searchTerm ? `&ipAddress=${searchTerm}` : ''
+
+    axios
+    .get(baseUrl+apiKey+ipAddress)
+    .then((response) => {
+      setIpData(response.data);
+    });
+  }
 
   useEffect(() => {
-    axios
-      .get(
-        "https://geo.ipify.org/api/v2/country?apiKey=at_rfqLVPQmxILsjD4EGJ1EE1PG24cVc"
-      )
-      .then((response) => {
-        setIpData(response.data);
-      });
-  }, []);
+    getIpInformation()
+  }, [searchTerm]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSearchTerm(e.target.ipAddress.value)
+    e.target.reset()
+  }
 
   if (!ipData) {
     return "Loading"
@@ -27,7 +40,7 @@ function App() {
     <div className="main">
       <div className="main__background-banner"> </div>
       <h1 className="main__title"> IP Adress Tracker </h1>
-      <InputField />
+      <InputField handleSubmit={handleSubmit} />
       <DetailsCard ipData={ipData}/>
       {/* <div className="map"> */}
       <MapContainer className="map" center={[51.505, -0.09]} zoom={13}>
@@ -36,9 +49,6 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={[51.505, -0.09]}>
-          {/* <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup> */}
         </Marker>
       </MapContainer>
     </div>
