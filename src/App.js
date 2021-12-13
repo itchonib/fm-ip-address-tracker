@@ -1,6 +1,6 @@
 import InputField from "./components/InputField/InputField";
 import DetailsCard from "./components/DetailsCard/DetailsCard";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "./App.css";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ function App() {
 
   const getIpInformation = () => {
     let baseUrl = 'https://geo.ipify.org/api/v2/country'
-    let apiKey =  '?apiKey=at_rfqLVPQmxILsjD4EGJ1EE1PG24cVc'
+    let apiKey =  process.env.API_KEY
     let ipAddress = searchTerm ? `&ipAddress=${searchTerm}` : ''
 
     axios
